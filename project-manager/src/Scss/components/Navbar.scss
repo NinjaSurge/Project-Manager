@@ -1,0 +1,8 @@
+@use '../colors' as *;
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: $primary;
+}

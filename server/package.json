@@ -1,0 +1,23 @@
+{
+  "name": "project-manager-server",
+  "version": "1.0.0",
+  "description": "This is the Backend for the Project Manager",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js --config ./configs/nodemon.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NinjaSurge/Project-Manager.git"
+  },
+  "author": "NinjaSurge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NinjaSurge/Project-Manager/issues"
+  },
+  "homepage": "https://github.com/NinjaSurge/Project-Manager#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}

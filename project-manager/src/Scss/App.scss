@@ -1,0 +1,9 @@
+#root {
+  display: flex;
+  flex-direction: row;
+  .page {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+}

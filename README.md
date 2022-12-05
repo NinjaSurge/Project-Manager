@@ -78,33 +78,39 @@
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+### Setup
 
-### Prerequisites
+#### backend
 
-This is an example of how to list things you need to use the software and how to install them.
+```sh
+cd <Project_Dir>/backend
+npm i
+```
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+#### frontend
 
-### Installation
+```sh
+cd <Project_Dir>/frontend
+npm i
+```
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/NinjaSurge/Project-Manager.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+### Running
+
+open a terminal for both the frontend and backend directories and run the following commands:
+
+#### Frontend
+
+```sh
+cd <Project_Dir>/frontend
+npm run dev
+```
+
+#### Backend
+
+```sh
+cd <Project_Dir>/backend
+npm start dev
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,7 +120,7 @@ This is an example of how to list things you need to use the software and how to
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://github.com/NinjaSurge/Project-Manager/wiki)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,10 +128,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
+We are starting off with Web projects as a base
+
+- [ ] Start Work on backend framework
+  - [ ] Make an example Project directory and structure it
+  - [ ] basic CRUD for Projects (Start with Creation and Deletion)
+- [ ] Start Work on the frontend UI
+  - [ ] Make a Project "Home page"
 
 See the [open issues](https://github.com/NinjaSurge/Project-Manager/issues) for a full list of proposed features (and known issues).
 
@@ -134,21 +143,17 @@ See the [open issues](https://github.com/NinjaSurge/Project-Manager/issues) for 
 ### Goals
 
 - list projects in a folder
-- open a VS-Code Web editor in a project folder when asked
+- open a code-server Web editor in a project folder when asked
 - quick, customizable, projects initialization and creation. (with scripts?)
 - quick git aand readme overview of the project
 - Remote User-specific access
 - Docker Image???
 
-### TODO
-
-- [ ] Web ui
-- [ ] Filesystem reading and writing
-- [ ] code-server integration
-
 <!-- CONTRIBUTING -->
 
-## Contributing
+<!-- NOOOO Clue how I want this handled yet -->
+
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -161,7 +166,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LICENSE -->
 
@@ -205,21 +210,7 @@ Project Link: [https://github.com/NinjaSurge/Project-Manager](https://github.com
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[next-url]: https://nextjs.org/
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [node.js]: https://img.shields.io/badge/Node-333?style=for-the-badge&logo=nodedotjs&logoColor=#339933
 [node-url]: https://nodejs.org/
-[vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[vue-url]: https://vuejs.org/
-[angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[angular-url]: https://angular.io/
-[svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[svelte-url]: https://svelte.dev/
-[laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[laravel-url]: https://laravel.com
-[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[bootstrap-url]: https://getbootstrap.com
-[jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[jquery-url]: https://jquery.com
