@@ -1,35 +1,26 @@
 const express = require('express');
 const fs = require('fs');
+const { globalWare } = require('./middleWare/middleware');
+const projectRoutes = require('./routes/projects');
 
-const projects_dir = '../Projects';
-
-fs.access(projects_dir, (e) => {
-  if (e) {
-    fs.mkdir(projects_dir, (e) => {
-      if (e) {
-        console.log(e);
-      } else {
-        console.log('New Directory Created');
-      }
-    });
-  } else {
-    console.log('Directory Exists');
-  }
-});
-
-const data = fs.readdirSync(projects_dir);
+const settings = {
+  PORT: 4000,
+  projects_dir: '../Projects',
+};
 
 const app = express();
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log(req.method, req.path);
-  next();
-});
+app.use(globalWare);
 
+app.use('/api/projects', projectRoutes);
+
+// Catch All
 app.get('*', (req, res) => {
   res.json(data);
 });
 
-app.listen(3000);
+app.listen(settings.PORT, () => {
+  console.log(`Starting Server on Port ${settings.PORT}`);
+});
