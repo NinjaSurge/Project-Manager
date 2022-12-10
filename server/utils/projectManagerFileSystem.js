@@ -1,13 +1,7 @@
 const { v4: uuidv4, validate } = require('uuid');
-const e = require('express');
 const fs = require('fs');
-const { get } = require('http');
 
 let projectsList = [];
-
-console.error = (info) => {
-  console.error(`\x1b[31m${info}\x1b[0m'`);
-};
 
 /**
  * @description Checks if the project directory exists
@@ -41,9 +35,7 @@ const listProjects = (project_directory) => {
       const project = JSON.parse(data);
       projectsList.push(project);
     } catch (err) {
-      emsg = `Error reading file from disk: ${err}`;
-      console.error(emsg);
-      throw Error(emsg);
+      throw Error(`Error reading file from disk: ${err}`);
     }
   }
 };
@@ -77,11 +69,38 @@ const getProject = (project_directory, id) => {
 
   if (!validate(id)) throw Error('Unable to validate id');
   projectsList.forEach((p) => {
-    // console.log(p);
     if (p._id === id) {
       return (project = p);
     }
   });
+  return project;
+};
+
+/**
+ * @description changes project information
+ * @author NinjaSurge
+ * @param {*} project_directory - The directory containing all the projects
+ * @param {*} id - The id of the project to change
+ * @param {*} project_info - The information needed to change the project
+ * @return {*}
+ */
+const editProject = (project_directory, id, project_info) => {
+  // Checks for project folder
+  checkFS(project_directory);
+
+  let project = getProject(project_directory, id);
+
+  // Create the folder structure and config file
+  const dir = `${project_directory}/${project.name}`;
+  if (!fs.existsSync(dir)) return { error: "Folder or Project Doesn't Exist" };
+  try {
+    fs.writeFileSync(`${dir}/.pm.json`, JSON.stringify(project_info), 'utf8');
+    fs.renameSync(dir, `${project_directory}/${project_info.name}`);
+  } catch (err) {
+    throw Error('[pmfs]: ' + err);
+  }
+  project = getProject(project_directory, id);
+  // Return the edited Project
   return project;
 };
 
@@ -152,7 +171,7 @@ const deleteProject = (project_directory, id) => {
 module.exports = {
   getProjects,
   getProject,
-  // editProject
+  editProject,
   makeProject,
   deleteProject,
 };

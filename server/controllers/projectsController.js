@@ -15,10 +15,22 @@ const getProjects = (req, res) => {
 
 const getProject = (req, res) => {
   const { id } = req.params;
-  console.log('ping');
   try {
     const data = pmfs.getProject(projects_dir, id);
     res.status(200).json(data);
+  } catch (err) {
+    throw Error(err);
+  }
+};
+
+const editProject = (req, res) => {
+  const data = req.body;
+  const { id } = req.params;
+  // console.log(data);
+  try {
+    const project = pmfs.editProject(projects_dir, id, data);
+    console.log(project);
+    res.status(200).json(project);
   } catch (err) {
     throw Error(err);
   }
@@ -37,4 +49,10 @@ const deleteProject = (req, res) => {
   res.status(200).json(project);
 };
 
-module.exports = { getProjects, getProject, createProject, deleteProject };
+module.exports = {
+  getProjects,
+  getProject,
+  editProject,
+  createProject,
+  deleteProject,
+};

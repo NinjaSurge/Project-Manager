@@ -2,6 +2,7 @@ const express = require('express');
 const {
   getProjects,
   getProject,
+  editProject,
   createProject,
   deleteProject,
 } = require('../controllers/projectsController');
@@ -18,7 +19,7 @@ router.get('/:id', getProject);
 router.post('/', createProject);
 
 // Update a Project
-router.patch('/:id');
+router.patch('/:id', editProject);
 
 // Remove a Project
 router.delete('/:id', deleteProject);
