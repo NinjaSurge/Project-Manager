@@ -1,5 +1,5 @@
 const fs = require('fs');
-const pmfs = require('../utils/pmfs');
+const pmfs = require('../utils/projectManagerFileSystem');
 
 const projects_dir = '../Projects';
 
@@ -24,6 +24,17 @@ const getProject = (req, res) => {
   }
 };
 
-const createProject = (req, res) => {};
+const createProject = (req, res) => {
+  const data = req.body;
+  const project = pmfs.makeProject(projects_dir, data);
+  console.log(project);
+  res.status(200).json(project);
+};
 
-module.exports = { getProjects, getProject, createProject };
+const deleteProject = (req, res) => {
+  const { id } = req.params;
+  const project = pmfs.deleteProject(projects_dir, id);
+  res.status(200).json(project);
+};
+
+module.exports = { getProjects, getProject, createProject, deleteProject };
