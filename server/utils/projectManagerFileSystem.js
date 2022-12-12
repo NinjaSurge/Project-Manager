@@ -12,7 +12,8 @@ const checkFS = (project_directory) => {
   try {
     fs.existsSync(project_directory);
   } catch (err) {
-    throw Error(`[pmfs]: ${err}`);
+    console.error(err);
+    throw new Error('No Projects Directory Detected');
   }
 };
 
@@ -35,7 +36,7 @@ const listProjects = (project_directory) => {
       const project = JSON.parse(data);
       projectsList.push(project);
     } catch (err) {
-      throw Error(`Error reading file from disk: ${err}`);
+      throw new Error(`Error reading file from disk: ${err}`);
     }
   }
 };
@@ -47,11 +48,16 @@ const listProjects = (project_directory) => {
  * @return {*} [ ...projectsList ]
  */
 const getProjects = (project_directory) => {
-  checkFS(project_directory);
+  try {
+    checkFS(project_directory);
 
-  listProjects(project_directory);
+    listProjects(project_directory);
 
-  return projectsList;
+    return projectsList;
+  } catch (err) {
+    console.error(err);
+    throw new Error('There was a problem reading the Project Directory');
+  }
 };
 
 /**
@@ -67,7 +73,7 @@ const getProject = (project_directory, id) => {
 
   let project = null;
 
-  if (!validate(id)) throw Error('Unable to validate id');
+  if (!validate(id)) throw new Error('Unable to validate id');
   projectsList.forEach((p) => {
     if (p._id === id) {
       return (project = p);
@@ -97,7 +103,7 @@ const editProject = (project_directory, id, project_info) => {
     fs.writeFileSync(`${dir}/.pm.json`, JSON.stringify(project_info), 'utf8');
     fs.renameSync(dir, `${project_directory}/${project_info.name}`);
   } catch (err) {
-    throw Error('[pmfs]: ' + err);
+    throw new Error('[pmfs]: ' + err);
   }
   project = getProject(project_directory, id);
   // Return the edited Project
@@ -130,7 +136,7 @@ const makeProject = (project_directory, project_info) => {
     fs.mkdirSync(dir);
     fs.writeFileSync(`${dir}/.pm.json`, JSON.stringify(info), 'utf8');
   } catch (err) {
-    throw Error('[pmfs]: ' + err);
+    throw new Error('[pmfs]: ' + err);
   }
 
   // Return the created Project
@@ -147,7 +153,7 @@ const makeProject = (project_directory, project_info) => {
 const deleteProject = (project_directory, id) => {
   // Directory Check
   checkFS(project_directory);
-  if (!validate(id)) throw Error('Unable to validate id');
+  if (!validate(id)) throw new Error('Unable to validate id');
 
   // retrieves project information
   listProjects(project_directory);
@@ -160,7 +166,7 @@ const deleteProject = (project_directory, id) => {
       force: true,
     });
   } catch (er) {
-    throw Error(er);
+    throw new Error(er);
   }
   // update projectList
   listProjects(project_directory);
