@@ -130,11 +130,7 @@ _For more examples, please refer to the [Documentation](https://github.com/Ninja
 
 We are starting off with Web projects as a base
 
-- [ ] Start Work on backend framework
-  - [ ] Make an example Project directory and structure it
-  - [ ] basic CRUD for Projects (Start with Creation and Deletion)
-- [ ] Start Work on the frontend UI
-  - [ ] Make a Project "Home page"
+[TODO](TODO.md)
 
 See the [open issues](https://github.com/NinjaSurge/Project-Manager/issues) for a full list of proposed features (and known issues).
 
