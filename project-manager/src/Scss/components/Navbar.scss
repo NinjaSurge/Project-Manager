@@ -1,8 +1,31 @@
 @use '../colors' as *;
 
 nav {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  height: auto;
   padding: 1rem;
+
   background-color: $primary;
+
+  a {
+    background-color: darken($primary, 20%);
+    border: 0.25rem solid darken($primary, 25%);
+    border-radius: 1rem;
+    text-align: center;
+    height: min-content;
+    padding: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+  }
+  a:hover {
+    background-color: darken($primary, 30%);
+  }
+  @for $i from 1 through 2 {
+    a:nth-child(#{$i}) {
+      grid-row: $i + 1;
+    }
+  }
 }

@@ -18,7 +18,7 @@ app.use('/api/projects', projectRoutes);
 
 // Catch All
 app.get('*', (req, res) => {
-  res.json(data);
+  res.send('Not Found');
 });
 
 app.listen(settings.PORT, () => {

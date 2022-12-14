@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20">
+  <rect x="0" y="0" width="130" height="20" fill="#6f6" />
+  <text x="2" y="15" fill="#363">
+    Project Manager
+  </text>
+</svg>
