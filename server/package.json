@@ -4,7 +4,9 @@
   "description": "This is the Backend for the Project Manager",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js --config ./configs/nodemon.json"
+    "server": "nodemon server.js --config ./configs/nodemon.json",
+    "frontend": "cd ../project-manager && npm start dev",
+    "dev": "concurrently \"npm:server\" \"npm:frontend\""
   },
   "repository": {
     "type": "git",

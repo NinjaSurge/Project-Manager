@@ -1,3 +1,4 @@
 .vscode
 Projects/*
-jsconfig.json
+*.json
+.env
