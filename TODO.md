@@ -14,6 +14,7 @@
 - [ ] Make a Project "Home page"
   - [ ] Display a README in markdown
 - [ ] Make a Project Listing Page.
+- [ ] Fix the Whitespace rendering in the Markdown Handler
 
 ## General Features
 
