@@ -1,7 +1,7 @@
-const fs = require('fs');
+const path = require('path');
 const pmfs = require('../utils/projectManagerFileSystem');
 
-const projects_dir = '../Projects';
+const projects_dir = __dirname + '/../../Projects';
 
 const getProjects = (req, res) => {
   const data = pmfs.getProjects(projects_dir);
@@ -23,10 +23,32 @@ const getProject = (req, res) => {
   }
 };
 
+const getProjectFile = (req, res) => {
+  console.log('====getProjectFile(pc)====');
+  const { id, filePath } = req.params;
+  if (!filePath) {
+    res.status(400).json({ error: 'Must send a filePath in the body' });
+    throw new Error('No filePath Specified');
+  }
+  try {
+    if (decodeURIComponent(filePath).includes('../')) {
+      res.status(401).json({ error: 'You sneaky hacker, you ;P' });
+    }
+    const data = pmfs.getProjectFile(
+      projects_dir,
+      id,
+      decodeURIComponent(filePath)
+    );
+    res.status(200).sendFile(data, { root: projects_dir });
+  } catch (err) {
+    res.status(500).send('There was an error grabbing the file');
+    throw Error(err);
+  }
+};
+
 const editProject = (req, res) => {
   const data = req.body;
   const { id } = req.params;
-  // console.log(data);
   try {
     const project = pmfs.editProject(projects_dir, id, data);
     console.log(project);
@@ -52,6 +74,7 @@ const deleteProject = (req, res) => {
 module.exports = {
   getProjects,
   getProject,
+  getProjectFile,
   editProject,
   createProject,
   deleteProject,

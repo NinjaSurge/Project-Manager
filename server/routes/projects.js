@@ -2,6 +2,7 @@ const express = require('express');
 const {
   getProjects,
   getProject,
+  getProjectFile,
   editProject,
   createProject,
   deleteProject,
@@ -14,6 +15,9 @@ router.get('/', getProjects);
 
 // Get one project
 router.get('/:id', getProject);
+
+// Get one project file
+router.get('/:id/:filePath', getProjectFile);
 
 // Create a new Project
 router.post('/', createProject);

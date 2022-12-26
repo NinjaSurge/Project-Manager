@@ -82,6 +82,66 @@ const getProject = (project_directory, id) => {
   return project;
 };
 
+// /**
+//  * @description Returns a file from the project directory
+//  * @author NinjaSurge
+//  * @param {*} project_directory - The directory containing all the projects
+//  * @param {*} id - The id of the project to be returned
+//  * @param {String} filePath - The file path within the project directory to return
+//  * @return {*} File Data
+//  */
+// const getProjectFile = (project_directory, id, filePath) => {
+//   checkFS(project_directory);
+//   listProjects(project_directory);
+
+//   console.log(filePath);
+
+//   let projectFile = null;
+
+//   if (!validate(id)) throw new Error('Unable to validate id');
+//   projectsList.forEach((p) => {
+//     if (p._id === id) {
+//       if (fs.existsSync(`${project_directory}/${p.name}/${filePath}`)) {
+//         return (projectFile = fs.readFileSync(
+//           `${project_directory}/${p.name}/${filePath}`
+//         ));
+//       } else {
+//         // console.log(err);
+//         throw new Error('Unable to get file from this directory');
+//       }
+//     }
+//   });
+//   // console.log(projectFile);
+//   return projectFile;
+// };
+
+/**
+ * @description Returns a file location from the project directory
+ * @author NinjaSurge
+ * @param {*} project_directory - The directory containing all the projects
+ * @param {*} id - The id of the project to be returned
+ * @param {String} filePath - The file path within the project directory to return
+ * @return {*} File Data
+ */
+const getProjectFile = (project_directory, id, filePath) => {
+  checkFS(project_directory);
+  listProjects(project_directory);
+
+  let projectFile = null;
+
+  if (!validate(id)) throw new Error('Unable to validate id');
+  projectsList.forEach((p) => {
+    if (p._id === id) {
+      if (fs.existsSync(`${project_directory}/${p.name}/${filePath}`)) {
+        return (projectFile = `/${p.name}/${filePath}`);
+      } else {
+        throw new Error('File does not exist');
+      }
+    }
+  });
+  return projectFile;
+};
+
 /**
  * @description changes project information
  * @author NinjaSurge
@@ -177,6 +237,7 @@ const deleteProject = (project_directory, id) => {
 module.exports = {
   getProjects,
   getProject,
+  getProjectFile,
   editProject,
   makeProject,
   deleteProject,

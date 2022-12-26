@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   Navigate,
-  useParams,
 } from 'react-router-dom';
 
 // Styling
@@ -23,27 +22,27 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="page">
+      <div className='page'>
         <Routes>
           ·
           <Route
-            path="/"
+            path='/'
             element={<Home />}
           />
           <Route
-            path="/home"
-            element={<Navigate to="/" />}
+            path='/home'
+            element={<Navigate to='/' />}
           />
           <Route
-            path="/help"
+            path='/help'
             element={<Help />}
           />
           <Route
-            path="/project/:id"
+            path='/project/:id'
             element={<Project />}
           />
           <Route
-            path="*"
+            path='*'
             element={<NotFound />}
           />
         </Routes>
