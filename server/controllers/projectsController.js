@@ -24,7 +24,6 @@ const getProject = (req, res) => {
 };
 
 const getProjectFile = (req, res) => {
-  console.log('====getProjectFile(pc)====');
   const { id, filePath } = req.params;
   if (!filePath) {
     res.status(400).json({ error: 'Must send a filePath in the body' });
@@ -51,7 +50,6 @@ const editProject = (req, res) => {
   const { id } = req.params;
   try {
     const project = pmfs.editProject(projects_dir, id, data);
-    console.log(project);
     res.status(200).json(project);
   } catch (err) {
     throw Error(err);
@@ -61,7 +59,6 @@ const editProject = (req, res) => {
 const createProject = (req, res) => {
   const data = req.body;
   const project = pmfs.makeProject(projects_dir, data);
-  console.log(project);
   res.status(200).json(project);
 };
 
