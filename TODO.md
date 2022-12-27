@@ -13,8 +13,7 @@
 
 - [ ] Make a Project "Home page"
   - [x] Display a README in markdown
-  - [ ] Fix the Whitespace rendering in the Markdown Handler [Issue #1](https://github.com/NinjaSurge/Project-Manager/issues/1)
-    - Whitespace renders as a return character. (Markdown Render error)
+  - [ ] https://github.com/NinjaSurge/Project-Manager/issues/1
 - [ ] Make a Project Listing Page.
 - [ ] Make a Project Creation form
 
