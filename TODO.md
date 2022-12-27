@@ -12,11 +12,20 @@
 ## Frontend
 
 - [ ] Make a Project "Home page"
-  - [ ] Display a README in markdown
+  - [x] Display a README in markdown
+  - [ ] Fix the Whitespace rendering in the Markdown Handler [Issue #1](https://github.com/NinjaSurge/Project-Manager/issues/1)
+    - Whitespace renders as a return character. (Markdown Render error)
 - [ ] Make a Project Listing Page.
-- [ ] Fix the Whitespace rendering in the Markdown Handler
+- [ ] Make a Project Creation form
 
 ## General Features
 
 - [ ] Allow tags/categorization for projects
-      ·
+- [ ] Make a template for Project READMEs
+- [ ] Documentation Tab
+- [ ] Tightly Integrate with git!!
+
+## Optional Features
+
+- [ ] Minimalistic Built-in Text Editor
+- [ ] Mobile/Native Apps

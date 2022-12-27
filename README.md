@@ -80,36 +80,43 @@
 
 ### Setup
 
-#### backend
+> **Note**: Do the Server-side Setup first
+
+Server-side:
 
 ```sh
-cd <Project_Dir>/backend
+cd <Project_Dir>/server
 npm i
 ```
 
-#### frontend
+Front-end:
 
 ```sh
-cd <Project_Dir>/frontend
+cd <Project_Dir>/project-manager
 npm i
 ```
 
 ### Running
 
-open a terminal for both the frontend and backend directories and run the following commands:
-
-#### Frontend
+Run the whole Project:
 
 ```sh
-cd <Project_Dir>/frontend
+cd <Project_Directory>/server
 npm run dev
 ```
 
-#### Backend
+Just Front-end: (not recomended)
 
 ```sh
-cd <Project_Dir>/backend
+cd <Project_Dir>/project-manager
 npm start dev
+```
+
+Just Server-side:
+
+```sh
+cd <Project_Dir>/server
+npm run server
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
