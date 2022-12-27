@@ -3,7 +3,14 @@
 ## Backend
 
 - [x] Make an example Project directory and structure it
-- [x] basic CRUD for Projects
+- [ ] CRUD
+  - [x] Project CRUD
+  - [ ] Project Content/Files CRUD
+    - [ ] File CRUD
+      - [ ] Creation
+      - [x] Read
+      - [ ] Update
+      - [ ] Deletion
 - [ ] Make usable projects
   - [ ] run commands/scripts in the directory on creation
   - [ ] Initialize git in the project
