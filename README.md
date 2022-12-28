@@ -144,8 +144,8 @@ For a better idea look at: [TODO](TODO.md)
 
 Current Major Tasks:
 
-- #2
-- #3
+- https://github.com/NinjaSurge/Project-Manager/issues/2
+- https://github.com/NinjaSurge/Project-Manager/issues/3
 
 See the [open issues](https://github.com/NinjaSurge/Project-Manager/issues) for a full list of proposed features (and known issues).
 
