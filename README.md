@@ -21,13 +21,13 @@
 <h3 align="center">Project Manager</h3>
 
   <p align="center">
-    This is a Project manager web ui for programming projects. It creates, reads, updates, and deletes development projects/environments for you in a uniform and customizable way.
+    This is a Project Management Web Interface for programming projects. It creates, reads, updates, and deletes development projects/environments for you in a uniform and customizable way.
     <br />
     <a href="https://github.com/NinjaSurge/Project-Manager"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/NinjaSurge/Project-Manager">View Demo</a>
-    ·
+    <!-- <a href="https://github.com/NinjaSurge/Project-Manager">View Demo</a>
+    · -->
     <a href="https://github.com/NinjaSurge/Project-Manager/issues">Report Bug</a>
     ·
     <a href="https://github.com/NinjaSurge/Project-Manager/issues">Request Feature</a>
@@ -66,12 +66,16 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
+This Repository is meant as a Learning project for me and a productivity tool, once up and running. I have **HUGE** plans/ambitions for this project in the future, but for now it remains a humble and simple half-working application.😂
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-- [![React][react.js]][react-url]
-- [![NODE][node.js]][node-url]
+[![React][react.js]][react-url]
+[![NODE][node.js]][node-url]
+
+- And more...
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -80,7 +84,8 @@
 
 ### Setup
 
-> **Note**: Do the Server-side Setup first
+> **Note**
+> Do the Server-side Setup first
 
 Server-side:
 
@@ -135,9 +140,12 @@ _For more examples, please refer to the [Documentation](https://github.com/Ninja
 
 ## Roadmap
 
-We are starting off with Web projects as a base
+For a better idea look at: [TODO](TODO.md)
 
-[TODO](TODO.md)
+Current Major Tasks:
+
+- https://github.com/NinjaSurge/Project-Manager/issues/2
+- https://github.com/NinjaSurge/Project-Manager/issues/3
 
 See the [open issues](https://github.com/NinjaSurge/Project-Manager/issues) for a full list of proposed features (and known issues).
 
@@ -154,14 +162,13 @@ See the [open issues](https://github.com/NinjaSurge/Project-Manager/issues) for 
 
 <!-- CONTRIBUTING -->
 
-<!-- NOOOO Clue how I want this handled yet -->
+## Contributing
 
-<!-- ## Contributing
+This is all very new to me so Pointers are Greatly Appreciated, I'll probably make an issue tag for those🤔...
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+That being said, Any contributions you make are **GREATLY** appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a feature suggestion, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -169,7 +176,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
@@ -183,7 +190,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-NinjaSurge - [@KaehlenR](https://twitter.com/KaehlenR) - rayktd@gmail.com
+[NinjaSurge](https://github.com/ninjasurge) - [@KaehlenR](https://twitter.com/KaehlenR) - rayktd@gmail.com
 
 Project Link: [https://github.com/NinjaSurge/Project-Manager](https://github.com/NinjaSurge/Project-Manager)
 
@@ -194,6 +201,7 @@ Project Link: [https://github.com/NinjaSurge/Project-Manager](https://github.com
 ## Acknowledgments
 
 - [NinjaSurge](https://github.com/ninjasurge)
+- Thanks to all the AMAZING maintainers of the Technologies used in this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,7 +221,18 @@ Project Link: [https://github.com/NinjaSurge/Project-Manager](https://github.com
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
+
+<!-- ReactJS -->
+
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
+
+<!-- Nodejs -->
+
 [node.js]: https://img.shields.io/badge/Node-333?style=for-the-badge&logo=nodedotjs&logoColor=#339933
 [node-url]: https://nodejs.org/
+
+<!-- Sass -->
+
+[sass]: https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=fff
+[sass-url]: https://sass-lang.com/
