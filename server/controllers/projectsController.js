@@ -3,6 +3,8 @@ const pmfs = require('../utils/projectManagerFileSystem');
 
 const projects_dir = __dirname + '/../../Projects';
 
+const required_fields = ['name', 'readme'];
+
 const getProjects = (req, res) => {
   const data = pmfs.getProjects(projects_dir);
 
@@ -48,18 +50,64 @@ const getProjectFile = (req, res) => {
 const editProject = (req, res) => {
   const data = req.body;
   const { id } = req.params;
-  try {
-    const project = pmfs.editProject(projects_dir, id, data);
-    res.status(200).json(project);
-  } catch (err) {
-    throw Error(err);
+
+  // Checking for required fields
+  let empty_fields = [];
+  for (const field in required_fields) {
+    if (data[required_fields[field]] === undefined)
+      empty_fields.push(required_fields[field]);
+  }
+
+  // Aditional field checks
+  let invalid_fields = [];
+  if (data.name === '') invalid_fields.push('name must not be empty');
+
+  if (empty_fields.length != 0) {
+    res
+      .status(400)
+      .json({ error: 'Must fill out all fields', fields: empty_fields });
+    return;
+  } else if (invalid_fields.length != 0) {
+    res
+      .status(400)
+      .json({ error: 'Some fields are invalid', fields: invalid_fields });
+  } else {
+    try {
+      const project = pmfs.editProject(projects_dir, id, data);
+      res.status(200).json(project);
+    } catch (err) {
+      throw Error(err);
+    }
   }
 };
 
 const createProject = (req, res) => {
   const data = req.body;
-  const project = pmfs.makeProject(projects_dir, data);
-  res.status(200).json(project);
+
+  // Checking for required fields
+  let empty_fields = [];
+  for (const field in required_fields) {
+    if (data[required_fields[field]] === undefined)
+      empty_fields.push(required_fields[field]);
+  }
+
+  // Aditional field checks
+  let invalid_fields = [];
+  if (data.name === '') invalid_fields.push('name must not be empty');
+
+  if (empty_fields.length != 0) {
+    res
+      .status(400)
+      .json({ error: 'Must fill out all fields', fields: empty_fields });
+    return;
+  } else if (invalid_fields.length != 0) {
+    res
+      .status(400)
+      .json({ error: 'Some fields are invalid', fields: invalid_fields });
+  } else {
+    const project = pmfs.makeProject(projects_dir, data);
+    res.status(200).json(project);
+  }
 };
 
 const deleteProject = (req, res) => {
