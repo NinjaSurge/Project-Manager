@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Help from './pages/Help';
 import Project from './pages/Project';
+import EditProject from './components/EditProject';
 
 function App() {
   return (
@@ -40,6 +41,14 @@ function App() {
           <Route
             path='/project/:id'
             element={<Project />}
+          />
+          <Route
+            path='/new/project'
+            element={<EditProject edit={false} />}
+          />
+          <Route
+            path='/edit/project/:id'
+            element={<EditProject edit={true} />}
           />
           <Route
             path='*'

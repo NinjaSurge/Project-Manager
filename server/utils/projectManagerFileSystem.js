@@ -164,7 +164,7 @@ const makeProject = (project_directory, project_info) => {
   // Handle incoming project information
   const uuid = uuidv4();
   const info = {
-    project_info,
+    ...project_info,
     _id: uuid,
   };
 
